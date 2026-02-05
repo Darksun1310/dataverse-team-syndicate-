@@ -5,115 +5,142 @@
   <title>VelocityMart | Operational Recovery Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Tailwind CSS -->
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body class="bg-slate-950 text-slate-100 font-sans">
+<body class="bg-slate-950 text-slate-100">
 
-  <!-- HEADER -->
-  <header class="border-b border-slate-800 px-8 py-6">
-    <h1 class="text-3xl font-bold">VelocityMart</h1>
-    <p class="text-slate-400 mt-1">
-      Operational Recovery & Forensic Audit — Team Syndicate
-    </p>
-  </header>
+<!-- HEADER -->
+<header class="px-8 py-6 border-b border-slate-800">
+  <h1 class="text-3xl font-bold">VelocityMart</h1>
+  <p class="text-slate-400 mt-1">
+    Operational Recovery & Forensic Audit Dashboard — Team Syndicate
+  </p>
+</header>
 
-  <!-- KPI SECTION -->
-  <section class="grid grid-cols-1 md:grid-cols-4 gap-6 px-8 py-8">
-    <div class="bg-slate-900 rounded-xl p-6 border border-slate-800">
-      <p class="text-slate-400">Entropy Reduction</p>
-      <h2 class="text-3xl font-bold text-emerald-400">82.2%</h2>
-    </div>
-    <div class="bg-slate-900 rounded-xl p-6 border border-slate-800">
-      <p class="text-slate-400">Inventory Secured</p>
-      <h2 class="text-3xl font-bold text-cyan-400">$8,400</h2>
-    </div>
-    <div class="bg-slate-900 rounded-xl p-6 border border-slate-800">
-      <p class="text-slate-400">Fulfillment Target</p>
-      <h2 class="text-3xl font-bold text-indigo-400">3.8 min</h2>
-    </div>
-    <div class="bg-slate-900 rounded-xl p-6 border border-slate-800">
-      <p class="text-slate-400">Stress-Test Capacity</p>
-      <h2 class="text-3xl font-bold text-orange-400">+20%</h2>
-    </div>
-  </section>
+<!-- KPI STRIP -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6 px-8 py-8">
+  <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+    <p class="text-slate-400">Entropy Reduction</p>
+    <h2 class="text-3xl font-bold text-emerald-400">82.2%</h2>
+  </div>
+  <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+    <p class="text-slate-400">Inventory Secured</p>
+    <h2 class="text-3xl font-bold text-cyan-400">$8,400</h2>
+  </div>
+  <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+    <p class="text-slate-400">Fulfillment Target</p>
+    <h2 class="text-3xl font-bold text-indigo-400">3.8 min</h2>
+  </div>
+  <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+    <p class="text-slate-400">Surge Resilience</p>
+    <h2 class="text-3xl font-bold text-orange-400">+20%</h2>
+  </div>
+</section>
 
-  <!-- CHARTS -->
-  <section class="grid grid-cols-1 md:grid-cols-2 gap-8 px-8">
+<!-- INSIGHT CARDS -->
+<section class="px-8 py-4">
+  <h2 class="text-2xl font-bold mb-6">Before vs. After — Recovery Insights</h2>
 
-    <!-- Fulfillment Time -->
-    <div class="bg-slate-900 p-6 rounded-xl border border-slate-800">
-      <h3 class="text-xl font-semibold mb-4">Fulfillment Time Recovery</h3>
-      <canvas id="timeChart"></canvas>
-    </div>
+  <!-- Operational Performance -->
+  <h3 class="text-xl font-semibold mb-4 text-slate-300">Operational Performance & Entropy</h3>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+    <div class="card">6.2 → 3.8 min<br><span>Fulfillment Time Restored</span></div>
+    <div class="card">29.75 → 5.30<br><span>Chaos Score Normalized</span></div>
+    <div class="card">82.2% ↓<br><span>Total Entropy Reduction</span></div>
+  </div>
 
-    <!-- Forensic Causes -->
-    <div class="bg-slate-900 p-6 rounded-xl border border-slate-800">
-      <h3 class="text-xl font-semibold mb-4">Forensic Root Causes</h3>
-      <canvas id="forensicChart"></canvas>
-    </div>
+  <!-- Data Integrity -->
+  <h3 class="text-xl font-semibold mb-4 text-slate-300">Data Integrity & Forensics</h3>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+    <div class="card">671 Anomalies<br><span>Shortcut Paradox Neutralized</span></div>
+    <div class="card">22 SKUs Fixed<br><span>Decimal Drift Eliminated</span></div>
+    <div class="card">Ghost Bins = 0<br><span>100% Inventory Sync</span></div>
+  </div>
 
-  </section>
+  <!-- Spatial & Thermal -->
+  <h3 class="text-xl font-semibold mb-4 text-slate-300">Spatial & Thermal Compliance</h3>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+    <div class="card">5.0 → 1.8<br><span>Aisle B Density Restored</span></div>
+    <div class="card">464 Fixed<br><span>Temperature Violations Resolved</span></div>
+    <div class="card">$8,400 Secured<br><span>Inventory Capital Protected</span></div>
+  </div>
 
-  <!-- STRATEGIC ROADMAP -->
-  <section class="px-8 py-10">
-    <div class="bg-slate-900 border border-slate-800 rounded-xl p-8">
-      <h3 class="text-2xl font-semibold mb-4">Phase 1 Strategic Intervention</h3>
-      <ul class="space-y-3 text-slate-300">
-        <li>• Thinned Aisle B to eliminate forklift restocking dead-zones</li>
-        <li>• Enforced thermal compliance at slotting level</li>
-        <li>• Rebalanced SKU density without increasing labor</li>
-        <li>• Constraint-validated for peak-hour and surge conditions</li>
-      </ul>
-    </div>
-  </section>
+  <!-- Strategic Roadmap -->
+  <h3 class="text-xl font-semibold mb-4 text-slate-300">Strategic Roadmap & Resilience</h3>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+    <div class="card">50 Moves<br><span>High-impact SKU Reslotting</span></div>
+    <div class="card">+20% Load<br><span>523,262 Orders Stress-Tested</span></div>
+    <div class="card">Zero Violations<br><span>Thermal & Weight Compliance</span></div>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="border-t border-slate-800 px-8 py-6 text-slate-500">
-    Mann Motivaras — Interim Head of Operations, Team Syndicate
-  </footer>
+<!-- CHARTS -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8 px-8 pb-12">
+  <div class="bg-slate-900 p-6 rounded-xl border border-slate-800">
+    <h3 class="text-xl font-semibold mb-4">Fulfillment Time Recovery</h3>
+    <canvas id="timeChart"></canvas>
+  </div>
 
-  <!-- CHART SCRIPTS -->
-  <script>
-    // Fulfillment Time Chart
-    new Chart(document.getElementById('timeChart'), {
-      type: 'bar',
-      data: {
-        labels: ['Peak Failure', 'Post-Recovery Target'],
-        datasets: [{
-          label: 'Minutes per Order',
-          data: [6.2, 3.8],
-          backgroundColor: ['#ef4444', '#22c55e']
-        }]
-      },
-      options: {
-        plugins: { legend: { display: false } },
-        scales: {
-          y: { beginAtZero: true }
-        }
-      }
-    });
+  <div class="bg-slate-900 p-6 rounded-xl border border-slate-800">
+    <h3 class="text-xl font-semibold mb-4">Forensic Root Causes</h3>
+    <canvas id="forensicChart"></canvas>
+  </div>
+</section>
 
-    // Forensic Breakdown
-    new Chart(document.getElementById('forensicChart'), {
-      type: 'doughnut',
-      data: {
-        labels: [
-          'Shortcut Paradox',
-          'Decimal Drift',
-          'Forklift Dead-zone'
-        ],
-        datasets: [{
-          data: [671, 22, 1],
-          backgroundColor: ['#38bdf8', '#fbbf24', '#a78bfa']
-        }]
-      }
-    });
-  </script>
+<!-- FOOTER -->
+<footer class="border-t border-slate-800 px-8 py-6 text-slate-500">
+  Mann Motivaras — Interim Head of Operations, Team Syndicate
+</footer>
+
+<!-- CARD STYLE -->
+<style>
+  .card {
+    background:#0f172a;
+    border:1px solid #1e293b;
+    border-radius:12px;
+    padding:24px;
+    font-size:1.5rem;
+    font-weight:700;
+  }
+  .card span {
+    display:block;
+    font-size:0.95rem;
+    color:#94a3b8;
+    margin-top:6px;
+    font-weight:400;
+  }
+</style>
+
+<!-- CHARTS -->
+<script>
+new Chart(document.getElementById('timeChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Week 90 (Peak Failure)', 'Post-Recovery'],
+    datasets: [{
+      data: [6.2, 3.8],
+      backgroundColor: ['#ef4444', '#22c55e']
+    }]
+  },
+  options: { plugins: { legend: { display: false } } }
+});
+
+new Chart(document.getElementById('forensicChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Shortcut Paradox', 'Decimal Drift', 'Forklift Dead-zone'],
+    datasets: [{
+      data: [671, 22, 1],
+      backgroundColor: ['#38bdf8', '#fbbf24', '#a78bfa']
+    }]
+  }
+});
+</script>
 
 </body>
 </html>
